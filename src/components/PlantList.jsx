@@ -1,9 +1,11 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList({plants}) {
+function PlantList({plants = []}) {
+  console.log("Plants received in plantList:", plants);
   return (
-    <ul className="cards">{plants.map((plant) => (
+    <ul className="cards">
+      {plants.map((plant) => (
       <PlantCard key = {plant.id} plant ={plant}/>
     ))}
     </ul>
